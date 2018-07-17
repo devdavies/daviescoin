@@ -79,11 +79,10 @@ public:
         consensus.nSubsidyHalvingInterval = 8000000;
         consensus.BIP16Height = 0; // 87afb798a3ad9378fcd56123c81fb31cfd9a8df4719b9774d71730c16315a092 - October 1, 2012
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("b9e52a066d732f9ba6ce02f48ab8e0f3e22e37d80efb8895b72ded79ad1ce42d");
+        consensus.BIP34Hash = uint256S("f0f28695c029b93bfc0f7b75fa85cb742573b12a221fd9ec02f4207308f021ef");
         consensus.BIP65Height = 0; // bab3041e8977e0dc3eeff63fe707b92bde1dd449d8efafb248c27c8264cc311a
         consensus.BIP66Height = 0; // 7aceee012833fa8952f8835d8b1b3ae233cd6ab08fdb27a771d2bd7bdc491894
-        consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        //consensus.powLimit = uint256S("0x00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); 
+        consensus.powLimit = uint256S("0x00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); 
         consensus.nPowTargetTimespan = 3.5 * 24 * 60 * 60; // 3.5 days
         consensus.nPowTargetSpacing = 2.5 * 60;
         consensus.fPowAllowMinDifficultyBlocks = false;
@@ -122,13 +121,13 @@ public:
         nDefaultPort = 9111;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1529517603, 729260, 0x1e0ffff0, 1, 50 * COIN);
-        //genesis = CreateGenesisBlock(1529517603, 38841, 0x1f00ffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1529517603, 38841, 0x1f00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
 
-        assert(consensus.hashGenesisBlock == uint256S("8f105519d93303ca27057376bc61f898747e70de336d332535addb50ce7231e3"));
+        assert(consensus.hashGenesisBlock == uint256S("f0f28695c029b93bfc0f7b75fa85cb742573b12a221fd9ec02f4207308f021ef"));
         assert(genesis.hashMerkleRoot == uint256S("f36a59601eb663a4aed9c4c3290dd619f94b62737bccafd6b13263fbddeb97cf"));
         
+
         // Note that of those with the service bits flag, most only support a subset of possible options
         // vSeeds.emplace_back("seed-a.litecoin.loshan.co.uk");
         // vSeeds.emplace_back("dnsseed.thrasher.io");
