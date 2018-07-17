@@ -28,7 +28,7 @@ packages:
 - "python-setuptools"
 - "fonts-tuffy"
 remotes:
-- "url": "https://github.com/davies-project/davies.git"
+- "url": "https://github.com/devdavies/daviescoin.git"
   "dir": "davies"
 files:
 - "MacOSX10.11.sdk.tar.gz"

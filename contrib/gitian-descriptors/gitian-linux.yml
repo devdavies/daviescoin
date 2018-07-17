@@ -28,7 +28,7 @@ packages:
 - "ca-certificates"
 - "python"
 remotes:
-- "url": "https://github.com/davies-project/davies.git"
+- "url": "https://github.com/devdavies/daviescoin.git"
   "dir": "davies"
 files: []
 script: |
