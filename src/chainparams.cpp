@@ -135,7 +135,7 @@ public:
         // vSeeds.emplace_back("dnsseed.litecoinpool.org");
         // vSeeds.emplace_back("dnsseed.koin-project.com");
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,30);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,33);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
         base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,30);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,160);
@@ -152,7 +152,7 @@ public:
 
         checkpointData = {
             {
-                // {  1500, uint256S("0x841a2965955dd288cfa707a755d05a54e45f8bd476835ec9af4402a2b59a2967")},
+                {  0, uint256S("0xf0f28695c029b93bfc0f7b75fa85cb742573b12a221fd9ec02f4207308f021ef")},
             }
         };
 
