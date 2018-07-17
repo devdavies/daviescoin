@@ -79,7 +79,7 @@ public:
         consensus.nSubsidyHalvingInterval = 8000000;
         consensus.BIP16Height = 0; // 87afb798a3ad9378fcd56123c81fb31cfd9a8df4719b9774d71730c16315a092 - October 1, 2012
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("f0f28695c029b93bfc0f7b75fa85cb742573b12a221fd9ec02f4207308f021ef");
+        consensus.BIP34Hash = uint256S("0xf0f28695c029b93bfc0f7b75fa85cb742573b12a221fd9ec02f4207308f021ef");
         consensus.BIP65Height = 0; // bab3041e8977e0dc3eeff63fe707b92bde1dd449d8efafb248c27c8264cc311a
         consensus.BIP66Height = 0; // 7aceee012833fa8952f8835d8b1b3ae233cd6ab08fdb27a771d2bd7bdc491894
         consensus.powLimit = uint256S("0x00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); 
@@ -124,8 +124,8 @@ public:
         genesis = CreateGenesisBlock(1529517603, 38841, 0x1f00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
 
-        assert(consensus.hashGenesisBlock == uint256S("f0f28695c029b93bfc0f7b75fa85cb742573b12a221fd9ec02f4207308f021ef"));
-        assert(genesis.hashMerkleRoot == uint256S("f36a59601eb663a4aed9c4c3290dd619f94b62737bccafd6b13263fbddeb97cf"));
+        assert(consensus.hashGenesisBlock == uint256S("0xf0f28695c029b93bfc0f7b75fa85cb742573b12a221fd9ec02f4207308f021ef"));
+        assert(genesis.hashMerkleRoot == uint256S("0xf36a59601eb663a4aed9c4c3290dd619f94b62737bccafd6b13263fbddeb97cf"));
         
 
         // Note that of those with the service bits flag, most only support a subset of possible options
@@ -174,10 +174,10 @@ public:
         strNetworkID = "test";
         consensus.nSubsidyHalvingInterval = 8000000;
         consensus.BIP16Height = 0; // always enforce P2SH BIP16 on regtest
-        consensus.BIP34Height = 76;
-        consensus.BIP34Hash = uint256S("8075c771ed8b495ffd943980a95f702ab34fce3c8c54e379548bda33cc8c0573");
-        consensus.BIP65Height = 76; // 8075c771ed8b495ffd943980a95f702ab34fce3c8c54e379548bda33cc8c0573
-        consensus.BIP66Height = 76; // 8075c771ed8b495ffd943980a95f702ab34fce3c8c54e379548bda33cc8c0573
+        consensus.BIP34Height = 0;
+        consensus.BIP34Hash = uint256S("0xf0f28695c029b93bfc0f7b75fa85cb742573b12a221fd9ec02f4207308f021ef");
+        consensus.BIP65Height = 0; // 8075c771ed8b495ffd943980a95f702ab34fce3c8c54e379548bda33cc8c0573
+        consensus.BIP66Height = 0; // 8075c771ed8b495ffd943980a95f702ab34fce3c8c54e379548bda33cc8c0573
         consensus.powLimit = uint256S("0x00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 3.5 * 24 * 60 * 60; // 3.5 days
         consensus.nPowTargetSpacing = 2.5 * 60;
