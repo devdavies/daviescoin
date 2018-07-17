@@ -9,6 +9,7 @@
 #include <tinyformat.h>
 #include <util.h>
 #include <utilstrencodings.h>
+#include <arith_uint256.h>
 
 #include <assert.h>
 
@@ -81,7 +82,8 @@ public:
         consensus.BIP34Hash = uint256S("b9e52a066d732f9ba6ce02f48ab8e0f3e22e37d80efb8895b72ded79ad1ce42d");
         consensus.BIP65Height = 0; // bab3041e8977e0dc3eeff63fe707b92bde1dd449d8efafb248c27c8264cc311a
         consensus.BIP66Height = 0; // 7aceee012833fa8952f8835d8b1b3ae233cd6ab08fdb27a771d2bd7bdc491894
-        consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); 
+        consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        //consensus.powLimit = uint256S("0x00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); 
         consensus.nPowTargetTimespan = 3.5 * 24 * 60 * 60; // 3.5 days
         consensus.nPowTargetSpacing = 2.5 * 60;
         consensus.fPowAllowMinDifficultyBlocks = false;
@@ -120,14 +122,13 @@ public:
         nDefaultPort = 9111;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1529517603, 471662, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1529517603, 729260, 0x1e0ffff0, 1, 50 * COIN);
+        //genesis = CreateGenesisBlock(1529517603, 38841, 0x1f00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        LogPrintf("genesis block: %s\n", genesis.ToString());
-        LogPrintf("genesis hash: %s\n", genesis.GetHash().ToString());
-        LogPrintf("merkle merkle root: %s\n", genesis.hashMerkleRoot.ToString());
-        assert(consensus.hashGenesisBlock == uint256S("0xb9e52a066d732f9ba6ce02f48ab8e0f3e22e37d80efb8895b72ded79ad1ce42d"));
-        assert(genesis.hashMerkleRoot == uint256S("0xf36a59601eb663a4aed9c4c3290dd619f94b62737bccafd6b13263fbddeb97cf"));
 
+        assert(consensus.hashGenesisBlock == uint256S("8f105519d93303ca27057376bc61f898747e70de336d332535addb50ce7231e3"));
+        assert(genesis.hashMerkleRoot == uint256S("f36a59601eb663a4aed9c4c3290dd619f94b62737bccafd6b13263fbddeb97cf"));
+        
         // Note that of those with the service bits flag, most only support a subset of possible options
         // vSeeds.emplace_back("seed-a.litecoin.loshan.co.uk");
         // vSeeds.emplace_back("dnsseed.thrasher.io");
@@ -178,7 +179,7 @@ public:
         consensus.BIP34Hash = uint256S("8075c771ed8b495ffd943980a95f702ab34fce3c8c54e379548bda33cc8c0573");
         consensus.BIP65Height = 76; // 8075c771ed8b495ffd943980a95f702ab34fce3c8c54e379548bda33cc8c0573
         consensus.BIP66Height = 76; // 8075c771ed8b495ffd943980a95f702ab34fce3c8c54e379548bda33cc8c0573
-        consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.powLimit = uint256S("0x00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 3.5 * 24 * 60 * 60; // 3.5 days
         consensus.nPowTargetSpacing = 2.5 * 60;
         consensus.fPowAllowMinDifficultyBlocks = true;
@@ -212,10 +213,11 @@ public:
         nDefaultPort = 1911;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1529517603 , 293345, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1529517603, 38841, 0x1f00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        // assert(consensus.hashGenesisBlock == uint256S("0x4966625a4b2851d9fdee139e56211a0d88575f59ed816ff5e6a63deb4e3e29a0"));
-        // assert(genesis.hashMerkleRoot == uint256S("0x97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9"));
+
+        assert(consensus.hashGenesisBlock == uint256S("0xf0f28695c029b93bfc0f7b75fa85cb742573b12a221fd9ec02f4207308f021ef"));
+        assert(genesis.hashMerkleRoot == uint256S("0xf36a59601eb663a4aed9c4c3290dd619f94b62737bccafd6b13263fbddeb97cf"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -268,7 +270,7 @@ public:
         consensus.BIP34Hash = uint256();
         consensus.BIP65Height = 1351; // BIP65 activated on regtest (Used in rpc activation tests)
         consensus.BIP66Height = 1251; // BIP66 activated on regtest (Used in rpc activation tests)
-        consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.powLimit = uint256S("0x00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 3.5 * 24 * 60 * 60; // two weeks
         consensus.nPowTargetSpacing = 2.5 * 60;
         consensus.fPowAllowMinDifficultyBlocks = true;
@@ -298,10 +300,11 @@ public:
         nDefaultPort = 19444;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1296688602, 0, 0x207fffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1529517603, 38841, 0x1f00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        // assert(consensus.hashGenesisBlock == uint256S("0x530827f38f93b43ed12af0b3ad25a288dc02ed74d6d7857862df51fc56c416f9"));
-        // assert(genesis.hashMerkleRoot == uint256S("0x97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9"));
+
+        assert(consensus.hashGenesisBlock == uint256S("0xf0f28695c029b93bfc0f7b75fa85cb742573b12a221fd9ec02f4207308f021ef"));
+        assert(genesis.hashMerkleRoot == uint256S("0xf36a59601eb663a4aed9c4c3290dd619f94b62737bccafd6b13263fbddeb97cf"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
