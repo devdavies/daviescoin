@@ -1,5 +1,5 @@
 ---
-name: "davies-linux-0.16"
+name: "davies-linux-1.0"
 enable_cache: true
 suites:
 - "trusty"

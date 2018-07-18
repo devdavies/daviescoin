@@ -1,5 +1,5 @@
 ---
-name: "davies-win-0.16"
+name: "davies-win-1.0"
 enable_cache: true
 suites:
 - "trusty"

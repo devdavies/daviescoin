@@ -1,5 +1,5 @@
 ---
-name: "davies-osx-0.16"
+name: "davies-osx-1.0"
 enable_cache: true
 suites:
 - "trusty"
