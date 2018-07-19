@@ -77,11 +77,11 @@ public:
     CMainParams() {
         strNetworkID = "main";
         consensus.nSubsidyHalvingInterval = 8000000;
-        consensus.BIP16Height = 0; // 87afb798a3ad9378fcd56123c81fb31cfd9a8df4719b9774d71730c16315a092 - October 1, 2012
+        consensus.BIP16Height = 0;
         consensus.BIP34Height = 0;
         consensus.BIP34Hash = uint256S("0xf0f28695c029b93bfc0f7b75fa85cb742573b12a221fd9ec02f4207308f021ef");
-        consensus.BIP65Height = 0; // bab3041e8977e0dc3eeff63fe707b92bde1dd449d8efafb248c27c8264cc311a
-        consensus.BIP66Height = 0; // 7aceee012833fa8952f8835d8b1b3ae233cd6ab08fdb27a771d2bd7bdc491894
+        consensus.BIP65Height = 0;
+        consensus.BIP66Height = 0;
         consensus.powLimit = uint256S("0x00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); 
         consensus.nPowTargetTimespan = 3.5 * 24 * 60 * 60; // 3.5 days
         consensus.nPowTargetSpacing = 2.5 * 60;
@@ -129,11 +129,7 @@ public:
         
 
         // Note that of those with the service bits flag, most only support a subset of possible options
-        // vSeeds.emplace_back("seed-a.davies.loshan.co.uk");
-        // vSeeds.emplace_back("dnsseed.thrasher.io");
-        // vSeeds.emplace_back("dnsseed.daviestools.com");
-        // vSeeds.emplace_back("dnsseed.daviespool.org");
-        // vSeeds.emplace_back("dnsseed.koin-project.com");
+        vSeeds.emplace_back("seed.daviescoin.io");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,33);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
@@ -220,10 +216,6 @@ public:
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        // nodes with support for servicebits filtering should be at the top
-        // vSeeds.emplace_back("testnet-seed.daviestools.com");
-        // vSeeds.emplace_back("seed-b.davies.loshan.co.uk");
-        // vSeeds.emplace_back("dnsseed-testnet.thrasher.io");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
@@ -242,14 +234,13 @@ public:
 
         checkpointData = (CCheckpointData) {
             {
-                // {2056, uint256S("17748a31ba97afdc9a4f86837a39d287e3e7c7290a08a1d816c5969c78a83289")},
+                {0, uint256S("0xf0f28695c029b93bfc0f7b75fa85cb742573b12a221fd9ec02f4207308f021ef")},
             }
         };
 
         chainTxData = ChainTxData{
-            // Data as of block a0afbded94d4be233e191525dc2d467af5c7eab3143c852c3cd549831022aad6 (height 343833)
-            1516406749,
-            794057,
+            1529517603,
+            0,
             0.01
         };
 
